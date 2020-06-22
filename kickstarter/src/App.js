@@ -5,7 +5,7 @@ import './App.css';
 
 import LoginForm from './components/Login'
 
-import UserDashboard from './components/user/UserDashBoard'
+import UserDashBoard from './components/user/UserDashBoard'
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={LoginForm}/>
           <Route path="/signup"/>
-          <PrivateRoute exact path="/profile" component={UserDashboard} />
+          <PrivateRoute exact path="/profile" component={UserDashBoard} />
         </Switch>
     </div>
     </Router>

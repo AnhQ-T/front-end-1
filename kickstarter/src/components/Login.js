@@ -30,7 +30,6 @@ const LoginForm = (props) => {
     */
 
     const submitHandler = (e) => {
-        e.preventDefault();
         props.Login(credentials)
         if (localStorage.getItem("token") != null) {
             history.push("/profile")
