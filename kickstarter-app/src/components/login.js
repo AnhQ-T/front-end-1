@@ -1,5 +1,7 @@
 import React from 'react'
+import styled from 'styled-components'
 
+import DivStyle from '../styles/divStyles.js';
 
 // Default page that loads //
 export default function login (props) {
@@ -13,7 +15,7 @@ export default function login (props) {
     } = props
 
     return (
-        <form onSubmit={onSubmit}>
+        <DivStyle onSubmit={onSubmit}>
             <div>
                 <h2>Welcome to the Login Page!</h2>
                 <h3>Login</h3>
@@ -46,7 +48,7 @@ export default function login (props) {
             <div>
                 <button id="loginBtn" disabled={disabled}>Login!</button>
             </div>
-        </form>
+        </DivStyle>
     )
     
 }

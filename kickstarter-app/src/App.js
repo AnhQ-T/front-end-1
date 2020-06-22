@@ -4,12 +4,15 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
 
-import LoginPage from './components/login'
-import RegisterPage from './components/register'
+import LoginPage from './components/login';
+import RegisterPage from './components/register';
 import { register } from './serviceWorker';
 
-import * as Yup from 'yup'
+import * as Yup from 'yup';
 import formSchema from './validation/formschema';
+
+import HeaderStyle from './styles/headerStyles.js';
+import DivStyle from './styles/divStyles.js';
 
 
 
@@ -93,7 +96,7 @@ console.log(formValues)
   return (
     <>
 
-      <div className="titleAndNav">
+      <HeaderStyle className="titleAndNav">
           <h1>Kickstarter App</h1>
           
           <Link to='/'>Login
@@ -104,9 +107,9 @@ console.log(formValues)
           <Link to='/signup'>Register
           
           </Link>
-      </div>
+      </HeaderStyle>
 
-
+    
       <Route exact path='/'>
         <LoginPage 
         values={formValues}
@@ -116,6 +119,7 @@ console.log(formValues)
         errors={formErrors}
         />
       </Route>
+      
 
       <Route path='/signup'>
         <RegisterPage 

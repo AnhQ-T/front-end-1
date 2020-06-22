@@ -1,4 +1,5 @@
 import React from 'react'
+import DivStyle from '../styles/divStyles.js';
 
 
 // Webpage that loads AFTER the Registration button is clicked on the main page //
@@ -13,7 +14,7 @@ export default function register (props) {
     } = props
 
     return (
-        <form onSubmit={onSubmit}>
+        <DivStyle onSubmit={onSubmit}>
             <div>
                 <h2>Welcome to the Registration Page!</h2>
                 <h3>Register</h3>
@@ -46,7 +47,7 @@ export default function register (props) {
             <div>
                 <button id="registerBtn" disabled={disabled}>Register!</button>
             </div>
-        </form>
+        </DivStyle>
     )
     
 }
