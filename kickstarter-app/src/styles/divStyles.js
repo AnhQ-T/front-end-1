@@ -2,15 +2,13 @@ import styled from 'styled-components'
 
 
 const StyledDiv = styled.div `
-    text-align: left;
-    margin: 2%;
+    margin-top: 1%;
     margin-left: 25%;
     margin-right: 25%;
-    padding: 2%;
-    border-left: 2px dotted gray;
-    border-right: 2px dotted gray;
-    border-bottom: 2px dashed gray;
-    border-top: 2px dashed gray;
+    padding: 1%;
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
+    box-shadow: 10px 5px 5px darkgray;
 `;
 
 export default StyledDiv

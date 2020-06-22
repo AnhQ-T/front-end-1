@@ -13,6 +13,7 @@ import formSchema from './validation/formschema';
 
 import HeaderStyle from './styles/headerStyles.js';
 import DivStyle from './styles/divStyles.js';
+import HStyle from './styles/h1Styles.js';
 
 
 
@@ -93,12 +94,14 @@ console.log(formValues)
 
 
 
+
+
   return (
     <>
 
       <HeaderStyle className="titleAndNav">
-        
-          <h1>Kickstarter App</h1>
+
+          <HStyle>Kickstarter App</HStyle>
           
           <Link to='/'>Login</Link>&nbsp;&nbsp;
           

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import DivStyle from '../styles/divStyles.js';
+import InnerDiv from '../styles/InnerDivStyles.js';
 
 // Default page that loads //
 export default function login (props) {
@@ -16,16 +17,18 @@ export default function login (props) {
 
     return (
         <DivStyle onSubmit={onSubmit}>
-            <div>
+            <InnerDiv>
                 <h2>Welcome to the Login Page!</h2>
                 <h3>Login</h3>
-            </div>
-            <div>
+            </InnerDiv>
+            <InnerDiv>
                 <div>{errors.name}</div>
                 <div>{errors.password}</div>
-            </div>
-            <div>
-                <label>Name: &nbsp;
+            </InnerDiv>
+                <br></br>
+            <InnerDiv>
+                <label>Name &nbsp;
+                    <br></br>
                     <input 
                     type='text'
                     name='name'
@@ -33,10 +36,11 @@ export default function login (props) {
                     onChange={onInputChange}
                     />
                 </label>&nbsp;
-                
+            </InnerDiv>
                 <br></br>
-
-                <label>Password: &nbsp;
+            <InnerDiv>
+                <label>Password &nbsp;
+                    <br></br>
                     <input 
                     type='text'
                     name='password'
@@ -44,10 +48,11 @@ export default function login (props) {
                     onChange={onInputChange}
                     />
                 </label>&nbsp;
-            </div>
-            <div>
+            </InnerDiv>
+                <br></br>
+            <InnerDiv>
                 <button id="loginBtn" disabled={disabled}>Login!</button>
-            </div>
+            </InnerDiv>
         </DivStyle>
     )
     
