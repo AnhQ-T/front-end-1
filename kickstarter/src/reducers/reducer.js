@@ -1,4 +1,4 @@
-import * as authAction from '../actions/authActions';
+import * as authAction from '../actions/action';
 
 const initialState = {
     username: '',
@@ -8,7 +8,7 @@ const initialState = {
     isFetching: false,
 }
 
-export const LoginReducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
     switch(action.type) {
         case authAction.LOGIN:
             return {
@@ -26,5 +26,7 @@ export const LoginReducer = (state = initialState, action) => {
                 ...state,
                 error: action.payload
             }
+        default:
+            return state;
     }
 }

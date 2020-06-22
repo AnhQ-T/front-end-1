@@ -8,8 +8,6 @@ export const REGISTER = "REGISTER"
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS"
 export const REGISTER_FAILURE = "REGISTER_FAILURE"
 
-
-
 export const Login = (credentials) => dispatch => {
 
     dispatch({
@@ -18,6 +16,7 @@ export const Login = (credentials) => dispatch => {
 
     axiosWithAuth().post("https://reqres.in/api/login", credentials)
     .then(res => {
+        console.log(credentials)
         console.log(res)
         localStorage.setItem('token', JSON.stringify(res.data.token));
         dispatch({
@@ -25,6 +24,7 @@ export const Login = (credentials) => dispatch => {
         })
     })
     .catch(err => {
+        console.log(credentials)
         console.log(err)
         dispatch({
             type: LOGIN_FAILURE, payload: err
