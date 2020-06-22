@@ -97,16 +97,13 @@ console.log(formValues)
     <>
 
       <HeaderStyle className="titleAndNav">
+        
           <h1>Kickstarter App</h1>
           
-          <Link to='/'>Login
+          <Link to='/'>Login</Link>&nbsp;&nbsp;
           
-          </Link>
-          
-          
-          <Link to='/signup'>Register
-          
-          </Link>
+          <Link to='/signup'>Register</Link>
+
       </HeaderStyle>
 
     
