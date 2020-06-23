@@ -107,6 +107,11 @@ const LoginForm = (props) => {
                     <button type="submit">Login</button>
                 </InnerDiv>
                 </form>
+                <div>
+                    <h4>Temporary login</h4>
+                    <p>username: eve.holt@reqres.in</p>
+                    <p>password: cityslicka</p>
+                </div>
             </DivStyle>
         )
     }
