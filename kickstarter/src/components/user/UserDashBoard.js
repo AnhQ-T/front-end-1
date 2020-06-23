@@ -74,10 +74,16 @@ const UserDashBoard = (props) => {
 
     let history = useHistory();
 
+    const [data, setData] = useState({
+        user_data: props.user_data
+    })
+
     const handleLogout = () => {
         props.Logout();
         history.push("/")
     }
+
+    console.log(data)
 
     return (
         <Wrapper>
@@ -105,4 +111,14 @@ const UserDashBoard = (props) => {
     )
 }
 
-export default connect(null, {Logout}) (UserDashBoard)
+const mapStateToProps = state => {
+    return {
+        username: state.username,
+        password: state.password,
+        error: state.error,
+        user_data: state.user_data,
+        loggedIn: state.loggedIn
+    }
+}
+
+export default connect(mapStateToProps, {Logout}) (UserDashBoard)
