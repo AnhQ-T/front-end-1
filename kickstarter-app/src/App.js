@@ -18,7 +18,7 @@ import HeaderStyle from './styles/headerStyles.js';
 const initialUser = [
   {
     name: 'Brian Griffiths',
-    password: '12345',
+    password: '123456',
   }
 ]
 

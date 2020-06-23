@@ -1,4 +1,16 @@
 
+
+#loginBtn {
+  background-color: lightgray;
+  color: teal;
+}
+
+#registerBtn {
+  background-color: lightgray;
+  color: teal;
+}
+
+
 .marketing-link {
   text-decoration: none;
   color: black;
@@ -9,7 +21,6 @@
   margin-top: 1%;
   margin-bottom: 1%;
 }
-
 
 .links {
   text-decoration: none;

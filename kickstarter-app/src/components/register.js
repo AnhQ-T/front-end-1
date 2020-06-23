@@ -1,4 +1,5 @@
 import React from 'react'
+
 import DivStyle from '../styles/divStyles.js';
 import InnerDiv from '../styles/InnerDivStyles.js';
 
