@@ -46,3 +46,12 @@
   margin-right: 5rem;
   width: 5%;
 }
+
+.add-link {
+  text-decoration: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}

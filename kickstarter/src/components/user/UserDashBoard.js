@@ -22,10 +22,18 @@ const Wrapper = styled.div`
     flex: 0 0 25%;
 `
 
+const ButtonContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 20%;
+    margin-left: 80%;
+`
+
 const Header = styled.header`
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center;git
     margin-top: 2rem;
 `
 
@@ -73,12 +81,15 @@ const UserDashBoard = (props) => {
 
     return (
         <Wrapper>
+            <ButtonContainer>
+                <Link className="add-link" to="/addcampaign">
+                    <StyledButton>Add new campaign</StyledButton>
+                </Link>
+                <StyledButton onClick={handleLogout}>Logout</StyledButton>
+            </ButtonContainer>
             <Header>
                 <div className="dashboard-header">
                     <h2>Welcome USERNAME</h2>
-                </div>
-                <div className="logout-container">
-                    <StyledButton onClick={handleLogout}>Logout</StyledButton>
                 </div>
             </Header>
             <CampaignContainer>

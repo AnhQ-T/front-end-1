@@ -5,8 +5,8 @@ import './App.css';
 
 import LoginForm from './components/Login'
 import RegisterForm from './components/Register'
-
 import UserDashBoard from './components/user/UserDashBoard'
+import CampaignAddForm from './components/user/CampaignAddForm'
 
 import HeaderStyle from './styles/headerStyles.js';
 import DivStyle from './styles/divStyles.js';
@@ -26,6 +26,7 @@ function App() {
           <Route exact path="/" component={LoginForm}/>
           <Route path="/signup" component={RegisterForm}/>
           <PrivateRoute exact path="/profile" component={UserDashBoard} />
+          <PrivateRoute exact path="/addcampaign" component={CampaignAddForm}/>
         </Switch>
     </div>
     </Router>
