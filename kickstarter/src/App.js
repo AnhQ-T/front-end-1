@@ -8,16 +8,20 @@ import RegisterForm from './components/Register'
 
 import UserDashBoard from './components/user/UserDashBoard'
 
+import HeaderStyle from './styles/headerStyles.js';
+import DivStyle from './styles/divStyles.js';
+import HStyle from './styles/h1Styles.js';
+
 
 function App() {
   return (
     <Router>
     <div className="App">
-      <div className="titleAndNav">
-          <h1>Kickstarter App</h1>
-          <Link to='/'>Login </Link>
-          <Link to='/signup'>Register</Link>
-      </div>
+    <HeaderStyle className="titleAndNav">
+      <HStyle>Kickstarter App</HStyle>
+      <Link to='/'>Login</Link>&nbsp;&nbsp;
+      <Link to='/signup'>Register</Link>
+    </HeaderStyle>
         <Switch>
           <Route exact path="/" component={LoginForm}/>
           <Route path="/signup" component={RegisterForm}/>
