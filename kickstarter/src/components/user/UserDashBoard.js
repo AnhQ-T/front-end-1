@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useHistory, Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux"
 import {Logout} from '../../actions/action';
+import CampaignList from './CampaignList'
 
 const Wrapper = styled.div`
     display: flex;
@@ -37,7 +38,12 @@ const Title = styled.h3`
 
 const CampaignContainer = styled.div`
     display:flex;
-    margin-left: 5rem;
+    flex-direction: row;
+    justify-content: space-around;
+`
+const CampaignItems = styled.div`
+    display: flex;
+    flex-direction: column;
 
 `
 
@@ -76,7 +82,13 @@ const UserDashBoard = (props) => {
                 </div>
             </Header>
             <CampaignContainer>
-                <Title>Current campaigns</Title>
+                <CampaignItems>
+                    <Title>Current campaigns</Title>
+                    <CampaignList />
+                </CampaignItems>
+                <div>
+                    <h2>Project Status and Predictions</h2>
+                </div>
             </CampaignContainer>
         </Wrapper>
     )
