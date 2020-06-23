@@ -5,6 +5,7 @@ const initialState = {
     password: '',
     error: '',
     user_data: [],
+    loggedIn: false,
     isFetching: false,
 }
 
@@ -19,6 +20,7 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 user_data: action.payload,
+                loggedIn: true,
                 isFetching: false,
             }
         case authAction.LOGIN_FAILURE:
