@@ -4,6 +4,7 @@ import PrivateRoute from './utils/PrivateRoute'
 import './App.css';
 
 import LoginForm from './components/Login'
+import RegisterForm from './components/Register'
 
 import UserDashBoard from './components/user/UserDashBoard'
 
@@ -19,7 +20,7 @@ function App() {
       </div>
         <Switch>
           <Route exact path="/" component={LoginForm}/>
-          <Route path="/signup"/>
+          <Route path="/signup" component={RegisterForm}/>
           <PrivateRoute exact path="/profile" component={UserDashBoard} />
         </Switch>
     </div>

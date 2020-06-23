@@ -1,14 +1,20 @@
 import React, {useState} from 'react'
 import { connect } from "react-redux"
 import {Login} from '../actions/action'
-import { useHistory } from "react-router-dom";
+import { useHistory, Link, Redirect } from "react-router-dom";
 import {useForm} from 'react-hook-form';
+
+import styled from 'styled-components'
+
+import DivStyle from '../styles/divStyles.js';
+import InnerDiv from '../styles/InnerDivStyles.js';
 
 const LoginForm = (props) => {
 
     let history = useHistory();
 
     const {register, handleSubmit, errors, reset} = useForm();
+    const [errorLog, setErrorLog] = useState('')
 
     const [credentials, setCredentials] = useState({
         username: props.username,
@@ -35,15 +41,32 @@ const LoginForm = (props) => {
             history.push("/profile")
         }
         else {
-            history.push("/")
+            setErrorLog('Please check your username and passsword')
+            setCredentials({
+                username: '',
+                password: '',
+            })
         }
     }
 
+    if (localStorage.getItem("token") != null) {
+        return (<Redirect to="profile" />);
+    }
+    else {
     return (
-        <div>
+        <DivStyle>
             <form onSubmit={handleSubmit(submitHandler)}>
-                <h3>Username</h3>
-                <input
+            <InnerDiv>
+                <h2>Welcome to the Login Page!</h2>
+                <h3>Login</h3>
+            </InnerDiv>
+            <InnerDiv>
+                <h3>{errorLog}</h3>
+            </InnerDiv>
+            <InnerDiv>
+                <label>Name &nbsp;
+                    <br></br>
+                    <input
                     type="text"
                     placeholder="Username"
                     name="username"
@@ -52,8 +75,13 @@ const LoginForm = (props) => {
                     ref={register({ required: true })}
                 />
                     {errors.username && <p>Username is required</p>}
-                <h3>Password</h3>
-                <input
+                </label>&nbsp;
+            </InnerDiv>
+                <br></br>
+            <InnerDiv>
+                <label>Password &nbsp;
+                    <br></br>
+                    <input
                     type="password"
                     placeholder="Password"
                     name="password"
@@ -62,12 +90,16 @@ const LoginForm = (props) => {
                     ref={register({ required: true })}
                 />
                     {errors.password && <p>Password is required</p>}
-                <div>
-                    <button type="submit">Login</button>
-                </div>
+                </label>&nbsp;
+            </InnerDiv>
+                <br></br>
+            <InnerDiv>
+                <button type="submit">Login</button>
+            </InnerDiv>
             </form>
-        </div>
+        </DivStyle>
     )
+    }
 }
 
 const mapStateToProps = state => {

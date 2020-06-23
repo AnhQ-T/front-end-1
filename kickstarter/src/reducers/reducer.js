@@ -21,6 +21,21 @@ export const reducer = (state = initialState, action) => {
                 user_data: action.payload,
                 isFetching: false,
             }
+        case authAction.LOGIN_FAILURE:
+            return {
+                ...state,
+                error: action.payload
+            }
+        case authAction.REGISTER:
+            return {
+                ...state,
+                isFetching: true,
+            }
+        case authAction.REGISTER_SUCCESS:
+            return {
+                ...state,
+                user_data: action.payload
+            }
         case authAction.REGISTER_FAILURE:
             return {
                 ...state,
