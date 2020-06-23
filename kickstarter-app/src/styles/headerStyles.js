@@ -8,6 +8,7 @@ const StyledHead = styled.header `
     padding: 2%;
     border-top: 4px solid black;
     border-bottom: 2px solid gray;
+    text-decoration: none;
 `;
 
 export default StyledHead

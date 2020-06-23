@@ -12,8 +12,6 @@ import * as Yup from 'yup';
 import formSchema from './validation/formschema';
 
 import HeaderStyle from './styles/headerStyles.js';
-import DivStyle from './styles/divStyles.js';
-import HStyle from './styles/h1Styles.js';
 
 
 
@@ -101,11 +99,11 @@ console.log(formValues)
 
       <HeaderStyle className="titleAndNav">
 
-          <HStyle>Kickstarter App</HStyle>
+          <a href='https://www.notion.so/Kickstarter-Success-bf0ab6ba01994759b8d6668a29cdf7ce' className="marketing-link">Kickstarter App</a>
           
-          <Link to='/'>Login</Link>&nbsp;&nbsp;
+          <Link to='/' className="links">Home</Link>&nbsp;&nbsp;
           
-          <Link to='/signup'>Register</Link>
+          <Link to='/signup' className="links">Register</Link>
 
       </HeaderStyle>
 
