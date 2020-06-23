@@ -77,16 +77,19 @@ time, mark, audio, video {
 }
 
 body {
+    background: white;
+    color: black;
 }
 
 #myHeader {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    /* justify-content:flex-end; */
     justify-content:space-around;
     align-items: center;
-    height: 60vh;
-    border: yellow 3px solid;
+    height: 10vh;
+    /* border: yellow 3px solid; */
 }
 
 #myFooter {
@@ -96,18 +99,26 @@ body {
     justify-content:space-around;
     align-items: center;
     height: 10vh;
-    border: yellow 3px solid;
-    
+    /* border: yellow 3px solid; */
+}
+
+#myHeader div {
+    width: 20%;
+    color: black;
+}
+
+#myHeader div h2 {
+    font-size: 20pt;
 }
 
 .links {
-    /* width:100%; */
-    width:800px;
+    width:30%;
+    /* width:800px; */
     display:flex;
     justify-content: space-evenly;
     align-items:center;
     blackground-color: black;
-    border: blue 3px solid;
+    /* border: blue 3px solid; */
 }
 
 .links a {
@@ -117,20 +128,58 @@ body {
     width: 100%;
     text-align:center;
     text-decoration: none;
-    border: green 3px solid;
-    background-color: white;
+    /* border: green 3px solid; */
+    /* background-color: white; */
 }
 
-.image {
-    /* width: 100%; */
-    width: 800px;
-    height: 200px;
+.index {
     display: flex;
-    justify-content: center;
-    border: pink 10px solid;
+    flex-direction: column;
 }
 
-img {
-    border: purple 10px solid;
+.within-index {
+    width: 100%;
+    height: 60vh;
+    background: url('/home/ecleary/Documents/Lambda_School/buildweek1/front-end/img/pattern.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+    /* border: purple 10px solid; */
+    border-top: black 10px solid;
+    border-bottom: black 10px solid;
+}
+
+.login-container {
+    width: 30%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* border: black 4px solid; */
+    background: white;
+    border: black 5px solid;
+}
+
+.login-container img {
+    width: 95%;
+    height: 20vh;
     object-fit: cover;
+}
+
+label {
+    width: 100%;
+    padding: 20px 0 0 20px;
+}
+
+input {
+    width: 95%;
+    padding: 10px 0;
+    background: white;
+}
+
+button {
+    width: 95%;
+    padding: 10px 0 ;
 }
