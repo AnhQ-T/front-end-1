@@ -127,9 +127,12 @@ body {
     blackground-color: black;
     width: 100%;
     text-align:center;
-    text-decoration: none;
     /* border: green 3px solid; */
     /* background-color: white; */
+}
+
+a {
+    text-decoration: none;
 }
 
 .index {
@@ -151,7 +154,7 @@ body {
     border-bottom: black 10px solid;
 }
 
-.login-container {
+.join-container {
     width: 25%;
     height: 50vh;
     display: flex;
@@ -163,7 +166,7 @@ body {
     border: black 5px solid;
 }
 
-.login-container img {
+.join-container img {
     width: 95%;
     height: 20vh;
     object-fit: cover;
@@ -180,40 +183,19 @@ input {
     background: white;
 }
 
-.login-container button {
-    width: 95%;
+.join-container a {
+    width: 40%;
     padding: 10px 0 ;
-}
-
-
-.text-container {
-    width: 50%;
-    height: 30vh;
-    /* border: black 5px solid; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.text-container .line {
-    width: 100%;
-    height: 10vh;
-    /* border: blue 5px solid; */
-}
-
-.text-container h2 {
-    font-size: 30px;
-    line-height: 70px;
+    border: black 1px solid;
     text-align: center;
+    border-radius: 10px;
+    transition: 1s;
 }
 
-.text-container button {
-    width: 30%;
-    font-size: 20px;
+.join-container a:hover {
+    color: white;
+    background: gray;
 }
-
-
 
 .contact-container {
     width: 100%;
