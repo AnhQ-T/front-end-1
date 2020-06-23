@@ -8,6 +8,8 @@ export const REGISTER = "REGISTER"
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS"
 export const REGISTER_FAILURE = "REGISTER_FAILURE"
 
+export const LOGOUT = "LOGOUT"
+
 export const Login = (credentials) => dispatch => {
 
     dispatch({
@@ -49,4 +51,11 @@ export const Register = (credentials) => dispatch => {
             type: REGISTER_FAILURE, payload: err
         })
     })
+}
+
+export const Logout = () => dispatch => {
+    dispatch({
+        type: LOGOUT
+    })
+    localStorage.clear()
 }

@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.dashboard-header {
+  width: 95%;
+  margin-left: 2rem;
+}
+
+.logout-container {
+  margin-right: 5rem;
+  width: 5%;
+}

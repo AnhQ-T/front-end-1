@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
 
+import { useHistory, Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux"
+import {Logout} from '../../actions/action';
+
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -17,16 +21,65 @@ const Wrapper = styled.div`
     flex: 0 0 25%;
 `
 
-const UserDashBoard = () => {
+const Header = styled.header`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2rem;
+`
+
+const Title = styled.h3`
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 1rem;
+    color: black;
+`;
+
+const CampaignContainer = styled.div`
+    display:flex;
+    margin-left: 5rem;
+
+`
+
+const StyledButton = styled.button`
+    display: block;
+    text-align: center;
+    background-color: #09BD92;
+    color: white;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+`;
+
+
+const UserDashBoard = (props) => {
+
+    let history = useHistory();
+
+    const handleLogout = () => {
+        props.Logout();
+        history.push("/")
+    }
 
     return (
         <Wrapper>
-            <h2>Welcome USERNAME</h2>
-            <div className="campaign-container">
-                <h3>Current campaigns</h3>
-            </div>
+            <Header>
+                <div className="dashboard-header">
+                    <h2>Welcome USERNAME</h2>
+                </div>
+                <div className="logout-container">
+                    <StyledButton onClick={handleLogout}>Logout</StyledButton>
+                </div>
+            </Header>
+            <CampaignContainer>
+                <Title>Current campaigns</Title>
+            </CampaignContainer>
         </Wrapper>
     )
 }
 
-export default UserDashBoard;
+export default connect(null, {Logout}) (UserDashBoard)
