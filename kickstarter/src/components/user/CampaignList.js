@@ -30,7 +30,7 @@ const CampaignList = (props) => {
     return (
         <div>
             {data.campaign.map((el, i) => (
-                <h4>{el.name}</h4>
+                <h4 key={i}>{el.name}</h4>
             ))}
         </div>
     )

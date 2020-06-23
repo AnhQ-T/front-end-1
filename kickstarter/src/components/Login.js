@@ -18,6 +18,9 @@ const LoginForm = (props) => {
     const [loggedIn, setLoggedIn] = useState({
         loggedIn: props.loggedIn
     });
+    const [errorTest, setErrorTest] = useState({
+        errorTest: props.error
+    })
 
     const [credentials, setCredentials] = useState({
         username: props.username,
@@ -59,7 +62,7 @@ const LoginForm = (props) => {
     }
 
     if (localStorage.getItem("token") != null) {
-        return (<Redirect to="profile" />);
+        return (<Redirect to="profile"/>);
     }
 
     else {
@@ -121,6 +124,7 @@ const mapStateToProps = state => {
     return {
         username: state.username,
         password: state.password,
+        error: state.error,
         loggedIn: state.loggedIn
     }
 }

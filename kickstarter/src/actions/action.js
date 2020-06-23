@@ -48,7 +48,7 @@ export const Register = (credentials) => dispatch => {
     .catch(err => {
         console.log(err)
         dispatch({
-            type: REGISTER_FAILURE, payload: err
+            type: REGISTER_FAILURE, payload: 'got an error'
         })
     })
 }

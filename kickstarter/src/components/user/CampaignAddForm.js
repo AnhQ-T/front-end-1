@@ -82,7 +82,7 @@ const CampaignAddForm = () => {
                             {errors.name && <p>A campaign name is required</p>}
                     <h3>Description</h3>
                         <StyledTextArea
-                            placeholder="Item Description"
+                            placeholder="Project Description"
                             name="description"
                             ref={register({ required: true })}
                         />
