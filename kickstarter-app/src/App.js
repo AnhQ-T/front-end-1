@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch, Link } from 'react-router-dom'
+import { Route, Switch, Link, useHistory } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
@@ -7,6 +7,7 @@ import axios from 'axios'
 import LoginPage from './components/login';
 import RegisterPage from './components/register';
 import { register } from './serviceWorker';
+import Profile from './components/profile.js';
 
 import * as Yup from 'yup';
 import formSchema from './validation/formschema';
@@ -45,8 +46,34 @@ function App() {
   const [ formErrors, setFormErrors ] = useState(initialFormErrors)
   const [ disabled, setDisabled ] = useState(initialDisabled)
 
+  let history = useHistory()
 
-console.log(formValues)
+//   const getUsers = () => {
+//     axios.get('https://kickstarterdb.herokuapp.com/')
+//       .then(response => {
+//         setUserData(response)
+//         console.log(response)
+        
+//       })
+//       .catch(err => {
+//         debugger
+//       })
+// }
+
+  
+//     axios.post('https://kickstart-prediction.herokuapp.com/profile', newUser)
+//       .then(res => {
+//         setUserData([...users, res.data])
+//       })
+//       .catch(err => {
+//         debugger
+//       })
+//       .finally(() => {
+//         setFormValues(initialFormValues)
+//       })
+  
+
+
 
 
   const onInputChange = evt => {
@@ -82,6 +109,8 @@ console.log(formValues)
     const newUser = { ...formValues }
     setUserData(userData => [newUser, ...userData])
     setFormValues(initialFormValues)
+
+    history.push("/profile")
   }
 
   useEffect(() => {
@@ -99,7 +128,7 @@ console.log(formValues)
 
       <HeaderStyle className="titleAndNav">
 
-          <a href='https://www.notion.so/Kickstarter-Success-bf0ab6ba01994759b8d6668a29cdf7ce' className="marketing-link">Kickstarter App</a>
+          <a href='https://priceless-brattain-62fd1d.netlify.app/index.html' className="marketing-link">Kickstarter App</a>
           
           <Link to='/' className="links">Home</Link>&nbsp;&nbsp;
           
@@ -129,6 +158,10 @@ console.log(formValues)
         />
       </Route>
 
+
+      <Route path='/profile'>
+        <Profile />
+      </Route>
     </>
   );
 }
