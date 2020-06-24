@@ -40,7 +40,6 @@ export const Register = (credentials) => dispatch => {
     })
     axiosWithAuth().post("https://kickstarter-mock-api.herokuapp.com/auth/register?" + `username=${credentials.username}` + `&` + `password=${credentials.password}`)
     .then(res => {
-        localStorage.setItem('token', JSON.stringify(res.data.token));
         dispatch({
             type: REGISTER_SUCCESS, payload: res
         })

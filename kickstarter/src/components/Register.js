@@ -40,12 +40,7 @@ const RegisterForm = (props) => {
 
     const submitHandler = (e) => {
         props.Register(credentials)
-        if (localStorage.getItem("token") != null) {
-            setLoggedIn(true);
-        }
-        else {
-            setErrorLog('Please check your username and passsword')
-        }
+        setErrorLog("Thank you! Please login now")
         setCredentials({
             username: '',
             password: '',
