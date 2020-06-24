@@ -99,7 +99,7 @@ const UserDashBoard = (props) => {
                 <div className="dashboard-header">
                     <div className="username-header">
                         <h2>Welcome</h2>
-                        <h2 style={{textTransform: 'capitalize', marginLeft: "0.5rem"}}>{data.user_data.username}</h2>
+                        <h2 style={{textTransform: 'capitalize', marginLeft: "0.5rem"}}>{localStorage.getItem("username")}</h2>
                     </div>
                 </div>
             </Header>
