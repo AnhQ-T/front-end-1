@@ -77,7 +77,7 @@ const LoginForm = (props) => {
                     <h3>{errorLog}</h3>
                 </InnerDiv>
                 <InnerDiv>
-                    <label>Name &nbsp;
+                    <label>Username &nbsp;
                         <br></br>
                         <input
                         type="text"
@@ -110,11 +110,6 @@ const LoginForm = (props) => {
                     <button type="submit">Login</button>
                 </InnerDiv>
                 </form>
-                <div>
-                    <h4>Temporary login</h4>
-                    <p>username: eve.holt@reqres.in</p>
-                    <p>password: cityslicka</p>
-                </div>
             </DivStyle>
         )
     }

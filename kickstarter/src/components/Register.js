@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { connect } from "react-redux"
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import {Register} from '../actions/action'
 import {useForm} from 'react-hook-form';
 
@@ -15,6 +15,9 @@ const RegisterForm = (props) => {
 
     const {register, handleSubmit, errors, reset} = useForm();
     const [errorLog, setErrorLog] = useState('')
+    const [loggedIn, setLoggedIn] = useState({
+        loggedIn: props.loggedIn
+    });
 
     const [credentials, setCredentials] = useState({
         username: props.username,
@@ -29,19 +32,31 @@ const RegisterForm = (props) => {
         })
     }
 
-    const submitHandler = (data , e) => {
+    useEffect(() => {
+        if (loggedIn === true) {
+            history.push("/profile")
+        }
+    }, [])
+
+    const submitHandler = (e) => {
         props.Register(credentials)
         if (localStorage.getItem("token") != null) {
-            history.push("/profile")
+            setLoggedIn(true);
         }
         else {
             setErrorLog('Please check your username and passsword')
-            setCredentials({
-                username: '',
-                password: '',
-            })
         }
+        setCredentials({
+            username: '',
+            password: '',
+        })
     }
+
+    if (localStorage.getItem("token") != null) {
+        return (<Redirect to="profile"/>);
+    }
+
+    else {
 
     return (
         <DivStyle>
@@ -89,6 +104,7 @@ const RegisterForm = (props) => {
             </form>
         </DivStyle>
     )
+    }
 }
 
 const mapStateToProps = state => {
@@ -96,6 +112,7 @@ const mapStateToProps = state => {
         username: state.username,
         password: state.password,
         error: state.error,
+        loggedIn: state.loggedIn
     }
 }
 

@@ -36,7 +36,9 @@ export const reducer = (state = initialState, action) => {
         case authAction.REGISTER_SUCCESS:
             return {
                 ...state,
-                user_data: action.payload
+                user_data: action.payload,
+                loggedIn: true,
+                isFetching: false,
             }
         case authAction.REGISTER_FAILURE:
             return {
