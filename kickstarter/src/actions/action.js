@@ -20,7 +20,7 @@ export const Login = (credentials) => dispatch => {
         type: LOGIN
     })
 
-    axiosWithAuth().post("https://kickstarter-mock-api.herokuapp.com/auth/login?" + `username=${credentials.username}` + `&` + `password=${credentials.password}`)
+    axiosWithAuth().post("https://kickstarter-mock-api.herokuapp.com/auth/login?", credentials)
     .then(res => {
         console.log(credentials)
         console.log(res)

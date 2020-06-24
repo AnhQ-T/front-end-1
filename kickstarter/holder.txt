@@ -1,0 +1,1 @@
+"https://kickstarter-mock-api.herokuapp.com/auth/login?" + `username=${credentials.username}` + `&` + `password=${credentials.password}`
