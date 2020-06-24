@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Kickstarter Goalie</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+    </script>
+    <script> 
+      $(function(){
+	  $("#header").load("header.html"); 
+	  $("#footer").load("footer.html"); 
+      });
+    </script> 
+
+  </head>
+
+  <body>
+
+    <div id="header"></div>
+
+    <!-- Heavily taken from: -->
+    <!-- https://www.w3schools.com/howto/howto_css_contact_form.asp -->
+    <div class="contact-container">
+
+      <label for="fname">First Name</label>
+      <input type="text" id="fname"
+	     name="firstname"
+	     placeholder="Your first name..."
+	     >
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname"
+	     name="lastname"
+	     placeholder="Your last name..."
+	     >
+      
+      <label for="email">Email Address</label>
+      <input type="text" id="email"
+	     name="emailaddr"
+	     placeholder="Email address..."
+	     >
+      
+      <button type="submit">Submit</button>
+      
+    </div><!-- container -->
+
+    <div id="footer"></div>
+
+    
+  </body>
+</html>
