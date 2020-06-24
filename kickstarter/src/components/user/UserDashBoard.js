@@ -72,6 +72,8 @@ const StyledButton = styled.button`
 
 const UserDashBoard = (props) => {
 
+    console.log(props)
+
     let history = useHistory();
 
     const [data, setData] = useState({
@@ -95,7 +97,10 @@ const UserDashBoard = (props) => {
             </ButtonContainer>
             <Header>
                 <div className="dashboard-header">
-                    <h2>Welcome USERNAME</h2>
+                    <div className="username-header">
+                        <h2>Welcome</h2>
+                        <h2 style={{textTransform: 'capitalize', marginLeft: "0.5rem"}}>{data.user_data.username}</h2>
+                    </div>
                 </div>
             </Header>
             <CampaignContainer>

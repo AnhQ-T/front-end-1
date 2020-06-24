@@ -55,3 +55,12 @@
   display: flex;
   justify-content: center;
 }
+
+.username-header {
+  display: flex;
+  justify-content: center;
+}
+
+.username-display {
+  padding-left: 5rem;
+}
