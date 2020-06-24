@@ -3,8 +3,10 @@ import * as authAction from '../actions/action';
 const initialState = {
     username: '',
     password: '',
+    email: '',
     error: '',
     user_data: [],
+    data_list: [],
     loggedIn: false,
     isFetching: false,
 }
@@ -44,6 +46,16 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 error: action.payload
+            }
+        case authAction.GET_DATA:
+            return {
+                ...state,
+                isFetching: true
+            }
+        case authAction.GET_DATA_SUCCESS:
+            return {
+                ...state,
+                data_list: action.payload
             }
         default:
             return state;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import styled, {css} from 'styled-components';
+import axios from 'axios';
 
 const CampaignAddForm = () => {
 
@@ -62,8 +63,29 @@ const CampaignAddForm = () => {
 
     const {register, handleSubmit, errors} = useForm();
 
-    const onSubmit = data => {
-        console.log(data);
+    const initialForm = {
+        name: '',
+        description: '',
+        goal: 0,
+        category: '',
+    }
+
+    const [addForm, setAddForm] = useState(initialForm)
+
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    };
+
+    const onSubmit = (event) => {
+        const input = {
+            name: event.name,
+            description: event.description,
+            goal: event.goal,
+            category: event.category,
+        }
+
+        axios.post(`https://kickstarter-mock-api.herokuapp.com/${localStorage.getItem("username")}`, input, config)
+
     }
 
     return (
@@ -89,12 +111,19 @@ const CampaignAddForm = () => {
                             {errors.description && <p>Please provide a description of the project</p>}
                     <h3>Funding Goal</h3>
                     <StyledInput
-                        type="text"
+                        type="number"
                         placeholder="Funding Goal"
                         name="goal"
                         ref={register({ required: true })}
                     />
                         {errors.goal && <p>A funding goal is required</p>}
+                    <StyledInput
+                        type="text"
+                        placeholder="Category"
+                        name="category"
+                        ref={register({ required: true })}
+                    />
+                        {errors.category && <p>A category is required</p>}
                     <div className="button-container">
                         <StyledButton type="submit">Submit</StyledButton>
                     </div>

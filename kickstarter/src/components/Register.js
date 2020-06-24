@@ -21,6 +21,7 @@ const RegisterForm = (props) => {
 
     const [credentials, setCredentials] = useState({
         username: props.username,
+        email: props.email,
         password: props.password
     })
 
@@ -77,6 +78,20 @@ const RegisterForm = (props) => {
                     {errors.username && <p>Username is required</p>}
                 </label>&nbsp;
             </InnerDiv>
+            <InnerDiv>
+                <label>Email &nbsp;
+                    <br></br>
+                    <input
+                    type="text"
+                    placeholder="Email"
+                    name="email"
+                    value={credentials.email}
+                    onChange={changeHandler}
+                    ref={register({ required: true })}
+                />
+                    {errors.email && <p>Email is required</p>}
+                </label>&nbsp;
+            </InnerDiv>
                 <br></br>
             <InnerDiv>
                 <label>Password &nbsp;
@@ -106,6 +121,7 @@ const mapStateToProps = state => {
     return {
         username: state.username,
         password: state.password,
+        email: state.email,
         error: state.error,
         loggedIn: state.loggedIn
     }

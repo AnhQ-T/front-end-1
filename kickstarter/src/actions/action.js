@@ -1,4 +1,5 @@
 import axiosWithAuth from '../utils/axiosWithAuth'
+import axios from 'axios';
 
 export const LOGIN = "LOGIN"
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS"
@@ -7,6 +8,9 @@ export const LOGIN_FAILURE = "LOGIN_FAILURE"
 export const REGISTER = "REGISTER"
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS"
 export const REGISTER_FAILURE = "REGISTER_FAILURE"
+
+export const GET_DATA = "GET_DATA"
+export const GET_DATA_SUCCESS = "GET_DATA_SUCCESS"
 
 export const LOGOUT = "LOGOUT"
 
@@ -39,8 +43,10 @@ export const Register = (credentials) => dispatch => {
     dispatch({
         type: REGISTER
     })
-    axiosWithAuth().post("https://kickstarter-mock-api.herokuapp.com/auth/register?" + `username=${credentials.username}` + `&` + `password=${credentials.password}`)
+    console.log(credentials)
+    axiosWithAuth().post("https://kickstarterdb.herokuapp.com/auth/register", credentials)
     .then(res => {
+        console.log(res)
         dispatch({
             type: REGISTER_SUCCESS, payload: res
         })
@@ -49,6 +55,22 @@ export const Register = (credentials) => dispatch => {
         console.log(err)
         dispatch({
             type: REGISTER_FAILURE, payload: 'got an error'
+        })
+    })
+}
+
+export const GetData = () => dispatch => {
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    };
+    dispatch({
+        type: GET_DATA,
+        payload: localStorage.getItem("username")
+    })
+    axios.get(`https://kickstarter-mock-api.herokuapp.com/${localStorage.getItem("username")}`, config)
+    .then(res => {
+        dispatch({
+            type: GET_DATA_SUCCESS, payload: res.data
         })
     })
 }

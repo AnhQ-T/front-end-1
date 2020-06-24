@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
 
 import { useHistory, Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux"
-import {Logout} from '../../actions/action';
+import {Logout, GetData} from '../../actions/action';
 import CampaignList from './CampaignList'
+
+import axios from 'axios';
 
 const Wrapper = styled.div`
     display: flex;
@@ -76,8 +78,11 @@ const UserDashBoard = (props) => {
 
     let history = useHistory();
 
+    const [dataTest, setDataTest] = useState();
+
     const [data, setData] = useState({
-        user_data: props.user_data
+        user_data: props.user_data,
+        data_list: props.data_list
     })
 
     const handleLogout = () => {
@@ -85,7 +90,19 @@ const UserDashBoard = (props) => {
         history.push("/")
     }
 
-    console.log(data)
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    };
+
+    useEffect(() => {
+        props.GetData();
+        setData({
+            ...data,
+            data_list: props.data_list
+        })
+    }, [])
+
+    console.log(data);
 
     return (
         <Wrapper>
@@ -122,8 +139,9 @@ const mapStateToProps = state => {
         password: state.password,
         error: state.error,
         user_data: state.user_data,
+        data_list: state.data_list,
         loggedIn: state.loggedIn
     }
 }
 
-export default connect(mapStateToProps, {Logout}) (UserDashBoard)
+export default connect(mapStateToProps, {Logout, GetData}) (UserDashBoard)
