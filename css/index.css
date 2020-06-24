@@ -288,3 +288,443 @@ a {
     /* border: blue 5px solid; */
     width: 80%;
 }
+
+
+
+
+@media(max-width: 800px) {
+
+    /* body { */
+    /* 	width: 100%; */
+    /* } */
+    
+    #myHeader .header-nav{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-around;
+	align-items: center;
+	height: 10vh;
+    }
+
+    #myHeader .header-img {
+	width: 100%;
+	height: 20vh;
+	background: url('../img/pattern.jpg');
+	border-top: black 5px solid;
+	border-bottom: black 5px solid;
+    }
+
+
+    #myHeader div {
+	width: 20%;
+	color: black;
+    }
+
+    #myHeader div h2 {
+	font-size: 20pt;
+    }
+
+    #myHeader .links {
+	width:30%;
+	/* width:800px; */
+	display:flex;
+	justify-content: space-evenly;
+	align-items:center;
+	blackground-color: black;
+	/* border: blue 3px solid; */
+    }
+
+    #myHeader .links a {
+	letter-spacing: 3px;
+	padding: 10px 0;
+	blackground-color: black;
+	width: 100%;
+	text-align:center;
+	/* border: green 3px solid; */
+	/* background-color: white; */
+    }
+
+    #myFooter {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content:space-around;
+	align-items: center;
+	height: 10vh;
+	/* border: yellow 3px solid; */
+	border-top: black 5px solid;
+    }
+
+    a {
+	text-decoration: none;
+    }
+
+    .index {
+	height: 260vh;
+	display: flex;
+	justify-content: center;
+    }
+
+    .index-within {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-around;
+    }
+
+    .join-container {
+	width: 450px;
+	height: 60vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background: white;
+	border: black 5px solid;
+    }
+
+    .join-container img {
+	width: 95%;
+	height: 30vh;
+	object-fit: cover;
+    }
+
+    .join-container h2 {
+	width: 80%;
+	text-align: center;
+    }
+
+
+    .join-container a {
+	width: 40%;
+	padding: 10px 0 ;
+	border: black 1px solid;
+	text-align: center;
+	border-radius: 10px;
+	transition: 1s;
+    }
+
+    .join-container a:hover {
+	color: white;
+	background: gray;
+    }
+
+
+    .contact-container {
+	width: 100%;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	border: black 5px solid;
+    }
+
+    .contact-container label {
+	width: 50%;
+	height: 5vh;
+	padding: 40px 0 0 0;
+	/* border: green 5px solid; */
+    }
+
+    .contact-container input {
+	width: 50%;
+	height: 5vh;
+	/* border: green 5px solid; */
+    }
+
+    .contact-container button {
+	width: 50%;
+	height: 5vh;
+	padding: 10px 100px;
+    }
+
+
+
+    /* Reviews page */
+
+    .reviews-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	/* border: black 5px solid; */
+	height: 80vh;
+    }
+
+    .reviews-body h1 {
+	height: 10vh;
+	font-size: 20px;
+    }
+
+    .reviews-list {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	/* align-items: space-evenly; */
+	align-content: space-evenly;
+	height: 60vh;
+	/* border: red 5px solid; */
+    }
+
+    .review {
+	width: 40%;
+	height: 25vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	border: black 2px solid;
+    }
+
+    .review-img {
+	width: 30%;
+    }
+
+    .review-txt {
+	width: 60%;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	/* border: green 5px solid; */
+    }
+
+    .review-txt h2 {
+	font-size: 15px;
+	/* border: blue 5px solid; */
+    }
+
+    .review-txt p {
+	/* border: blue 5px solid; */
+	width: 80%;
+    }
+
+}
+
+
+
+
+
+
+@media(max-width: 500px) {
+
+    body {
+	width: 100%;
+    }
+    
+    #myHeader .header-nav{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-around;
+	align-items: center;
+	height: 10vh;
+    }
+
+    #myHeader .header-img {
+	width: 100%;
+	height: 20vh;
+	background: url('../img/pattern.jpg');
+	border-top: black 5px solid;
+	border-bottom: black 5px solid;
+    }
+
+
+    #myHeader div {
+	width: 20%;
+	color: black;
+    }
+
+    #myHeader div h2 {
+	font-size: 20pt;
+    }
+
+    #myHeader .links {
+	width:30%;
+	/* width:800px; */
+	display:flex;
+	justify-content: space-evenly;
+	align-items:center;
+	blackground-color: black;
+	/* border: blue 3px solid; */
+    }
+
+    #myHeader .links a {
+	letter-spacing: 3px;
+	padding: 10px 0;
+	blackground-color: black;
+	width: 100%;
+	text-align:center;
+	/* border: green 3px solid; */
+	/* background-color: white; */
+    }
+
+    #myFooter {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content:space-around;
+	align-items: center;
+	height: 10vh;
+	/* border: yellow 3px solid; */
+	border-top: black 5px solid;
+    }
+
+    a {
+	text-decoration: none;
+    }
+
+    .index {
+	height: 260vh;
+	display: flex;
+	justify-content: center;
+    }
+
+    .index-within {
+	width: 500px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-around;
+    }
+
+    .join-container {
+	width: 450px;
+	height: 60vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background: white;
+	border: black 5px solid;
+    }
+
+    .join-container img {
+	width: 95%;
+	height: 30vh;
+	object-fit: cover;
+    }
+
+    .join-container h2 {
+	width: 80%;
+	text-align: center;
+    }
+
+
+    .join-container a {
+	width: 40%;
+	padding: 10px 0 ;
+	border: black 1px solid;
+	text-align: center;
+	border-radius: 10px;
+	transition: 1s;
+    }
+
+    .join-container a:hover {
+	color: white;
+	background: gray;
+    }
+
+
+    .contact-container {
+	width: 100%;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	border: black 5px solid;
+    }
+
+    .contact-container label {
+	width: 50%;
+	height: 5vh;
+	padding: 40px 0 0 0;
+	/* border: green 5px solid; */
+    }
+
+    .contact-container input {
+	width: 50%;
+	height: 5vh;
+	/* border: green 5px solid; */
+    }
+
+    .contact-container button {
+	width: 50%;
+	height: 5vh;
+	padding: 10px 100px;
+    }
+
+
+
+    /* Reviews page */
+
+    .reviews-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	/* border: black 5px solid; */
+	height: 80vh;
+    }
+
+    .reviews-body h1 {
+	height: 10vh;
+	font-size: 20px;
+    }
+
+    .reviews-list {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	/* align-items: space-evenly; */
+	align-content: space-evenly;
+	height: 60vh;
+	/* border: red 5px solid; */
+    }
+
+    .review {
+	width: 40%;
+	height: 25vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	border: black 2px solid;
+    }
+
+    .review-img {
+	width: 30%;
+    }
+
+    .review-txt {
+	width: 60%;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	/* border: green 5px solid; */
+    }
+
+    .review-txt h2 {
+	font-size: 15px;
+	/* border: blue 5px solid; */
+    }
+
+    .review-txt p {
+	/* border: blue 5px solid; */
+	width: 80%;
+    }
+
+}
