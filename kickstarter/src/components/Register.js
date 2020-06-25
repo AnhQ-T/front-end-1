@@ -94,7 +94,7 @@ const RegisterForm = (props) => {
             </InnerDiv>
                 <br></br>
             <InnerDiv>
-                <button type="submit">Register</button>
+                <button id="registerBtn" type="submit">Register</button>
             </InnerDiv>
             </form>
         </DivStyle>

@@ -19,8 +19,8 @@ function App() {
     <div className="App">
     <HeaderStyle className="titleAndNav">
       <HStyle>Kickstarter App</HStyle>
-      <Link to='/'>Login</Link>&nbsp;&nbsp;
-      <Link to='/signup'>Register</Link>
+      <Link to='/' className="links">Login</Link>&nbsp;&nbsp;
+      <Link to='/signup' className="links">Register</Link>
     </HeaderStyle>
         <Switch>
           <Route exact path="/" component={LoginForm}/>

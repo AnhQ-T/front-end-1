@@ -108,7 +108,7 @@ const LoginForm = (props) => {
                 </InnerDiv>
                     <br></br>
                 <InnerDiv>
-                    <button type="submit">Login</button>
+                    <button id="loginBtn" type="submit">Login</button>
                 </InnerDiv>
                 </form>
             </DivStyle>
