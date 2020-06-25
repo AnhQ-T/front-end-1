@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { useHistory, Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux"
 import {Logout, GetData} from '../../actions/action';
-import CampaignList from './CampaignList'
 
-import axios from 'axios';
+import CampaignList from './CampaignList'
+import CurrentCampaign from './CurrentCampaign'
 
 const Wrapper = styled.div`
     display: flex;
@@ -85,14 +85,15 @@ const UserDashBoard = (props) => {
         data_list: props.data_list
     })
 
+    const [campaign, setCampaign] = useState({
+        current_campaign: props.current_campaign,
+        current_campaign_link: props.current_campaign_link
+    })
+
     const handleLogout = () => {
         props.Logout();
         history.push("/")
     }
-
-    const config = {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
-    };
 
     useEffect(() => {
         props.GetData();
@@ -102,7 +103,7 @@ const UserDashBoard = (props) => {
         })
     }, [])
 
-    console.log(data);
+    console.log(props)
 
     return (
         <Wrapper>
@@ -127,6 +128,9 @@ const UserDashBoard = (props) => {
                 </CampaignItems>
                 <div>
                     <h2>Project Status and Predictions</h2>
+                    <div>
+                        <CurrentCampaign />
+                    </div>
                 </div>
             </CampaignContainer>
         </Wrapper>
@@ -140,6 +144,8 @@ const mapStateToProps = state => {
         error: state.error,
         user_data: state.user_data,
         data_list: state.data_list,
+        current_campaign_link: state.current_campaign_link,
+        current_campaign: state.current_campaign,
         loggedIn: state.loggedIn
     }
 }

@@ -51,6 +51,7 @@ const LoginForm = (props) => {
         props.Login(credentials)
         if (localStorage.getItem("token") != null) {
             setLoggedIn(true)
+            history.push("/profile")
         }
         else {
             setErrorLog("Please check your username and password")

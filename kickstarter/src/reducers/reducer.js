@@ -7,6 +7,8 @@ const initialState = {
     error: '',
     user_data: [],
     data_list: [],
+    current_campaign_link: '',
+    current_campaign: [],
     loggedIn: false,
     isFetching: false,
 }
@@ -55,7 +57,20 @@ export const reducer = (state = initialState, action) => {
         case authAction.GET_DATA_SUCCESS:
             return {
                 ...state,
-                data_list: action.payload
+                data_list: action.payload,
+                isFetching: false
+            }
+        case authAction.GET_CURRENT_CAMPAIGN:
+            return {
+                ...state,
+                current_campaign_link: action.payload,
+                isFetching: true
+            }
+        case authAction.GET_CURRENT_CAMPAIGN_SUCCESS:
+            return {
+                ...state,
+                current_campaign: action.payload,
+                isFetching: false
             }
         default:
             return state;
