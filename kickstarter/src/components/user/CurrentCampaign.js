@@ -106,6 +106,18 @@ const StyledForm = styled.form`
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 `;
 
+
+const StyledEditForm = styled.form`
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: black;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+`;
+
 const StyledInput = styled.input`
     display: block;
     width: 100%;
@@ -184,7 +196,7 @@ const StyledButton = styled.button`
             {isEditing == true ?
             <div>
                 <StyledFormWrapper>
-                <StyledForm onSubmit={handleSubmit(editCampaign)}>
+                <StyledEditForm onSubmit={handleSubmit(editCampaign)}>
                     <h3>Campaign Name</h3>
                         <StyledInput
                             type="text"
@@ -208,6 +220,7 @@ const StyledButton = styled.button`
                         ref={register({ required: true })}
                     />
                         {errors.goal && <p>A funding goal is required</p>}
+                    <h3>Category</h3>
                     <StyledInput
                         type="text"
                         placeholder="Category"
@@ -218,7 +231,7 @@ const StyledButton = styled.button`
                     <div className="button-container">
                         <StyledButton type="submit">Submit</StyledButton>
                     </div>
-                </StyledForm>
+                </StyledEditForm>
                 </StyledFormWrapper>
                 </div>
                 : null}
