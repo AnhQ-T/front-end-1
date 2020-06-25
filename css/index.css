@@ -122,8 +122,6 @@ body {
     /* padding: 10px 0; */
     width: 100%;
     text-align:center;
-    /* border: green 3px solid; */
-    /* background-color: white; */
 }
 
 #myFooter {
@@ -216,13 +214,11 @@ a {
     width: 50%;
     height: 5vh;
     padding: 40px 0 0 0;
-    /* border: green 5px solid; */
 }
 
 .contact-container input {
     width: 50%;
     height: 5vh;
-    /* border: green 5px solid; */
 }
 
 .contact-container button {
@@ -425,13 +421,11 @@ a {
 	width: 50%;
 	height: 5vh;
 	padding: 40px 0 0 0;
-	/* border: green 5px solid; */
     }
 
     .contact-container input {
 	width: 50%;
 	height: 5vh;
-	/* border: green 5px solid; */
     }
 
     .contact-container button {
@@ -450,7 +444,7 @@ a {
 	justify-content: space-evenly;
 	align-items: center;
 	/* border: black 5px solid; */
-	height: 80vh;
+	height: 120vh;
     }
 
     .reviews-body h1 {
@@ -468,7 +462,6 @@ a {
 	/* align-items: space-evenly; */
 	align-content: space-evenly;
 	height: 90vh;
-	/* border: red 5px solid; */
     }
 
     .review {
@@ -492,24 +485,17 @@ a {
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	/* border: green 5px solid; */
     }
 
     .review-txt h2 {
-	font-size: 15px;
-	/* border: blue 5px solid; */
+	font-size: 25px;
     }
 
     .review-txt p {
-	/* border: blue 5px solid; */
 	width: 80%;
     }
 
 }
-
-
-
-
 
 
 @media(max-width: 500px) {
@@ -578,7 +564,6 @@ a {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	border: green 5px solid;
 	height: 10vh;
     }
 
@@ -655,13 +640,11 @@ a {
 	width: 50%;
 	height: 5vh;
 	padding: 40px 0 0 0;
-	/* border: green 5px solid; */
     }
 
     .contact-container input {
 	width: 50%;
 	height: 5vh;
-	/* border: green 5px solid; */
     }
 
     .contact-container button {
@@ -679,57 +662,55 @@ a {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	/* border: black 5px solid; */
-	height: 120vh;
+	height: 220vh;
     }
 
     .reviews-body h1 {
+	height: 10vh;
 	font-size: 40px;
+	width: 80%;
 	text-align: center;
     }
 
     .reviews-list {
 	display:flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: space-evenly;
-	align-content: space-evenly;
-	height: 90vh;
+	flex-direction: column;
+	/* flex-wrap: wrap; */
+	justify-content: space-evenly;
+	align-items: center;
+	/* align-content: space-evenly; */
+	height: 200vh;
     }
 
     .review {
 	width: 460px;
-	height: 25vh;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
-	align-content: space-around;
-	border: black 2px solid;
-    }
-
-    .review-img {
-	width: 30%;
-    }
-
-    .review-txt {
-	width: 60%;
-	height: 80%;
+	height: 60vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	/* border: green 5px solid; */
+	align-content: space-evenly;
+	border: black 2px solid;
+    }
+
+    .review-img {
+	width: 70%;
+    }
+
+    .review-txt {
+	width: 60%;
+	height: 30vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
     }
 
     .review-txt h2 {
-	font-size: 15px;
-	/* border: blue 5px solid; */
+	font-size: 25px;
     }
 
     .review-txt p {
-	/* border: blue 5px solid; */
 	width: 80%;
     }
 
