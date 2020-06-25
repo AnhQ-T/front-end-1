@@ -5,6 +5,8 @@ import {useForm} from 'react-hook-form';
 import { DeleteCampaign, UpdateCampaign } from '../../actions/action'
 
 import styled, {css} from 'styled-components';
+import axiosWithAuth from '../../utils/axiosWithAuth';
+import axios from 'axios';
 
 const CurrentCampaign = (props) => {
 
@@ -50,6 +52,14 @@ const ButtonContainer = styled.div`
     justify-content: center;
 `
 
+const PredictionContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+`
+
 const EditButton = styled.button`
     display: block;
     text-align: center;
@@ -77,6 +87,20 @@ const DeleteButton = styled.button`
     cursor: pointer;
     box-sizing: border-box;
     margin-left: 5rem;
+`;
+
+const PredictionButton = styled.button`
+    display: block;
+    text-align: center;
+    background-color: #4e5eed;
+    color: white;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 20px;
+    cursor: pointer;
+    box-sizing: border-box;
 `;
 
 const inputStyle = css`
@@ -179,6 +203,27 @@ const StyledButton = styled.button`
         props.UpdateCampaign(props.current_campaign_link, input)
     }
 
+    const getPrediction = (e) => {
+        var data = JSON.stringify({"category":{"0":"Animation"},"staff_pick":{"0":false},"description_leng":{"0":99},"usd_goal":{"0":30000},"cam_length":{"0":5}});
+
+        var config = {
+            method: 'post',
+            url: 'https://ks-ds-15.herokuapp.com/predict',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        data : data
+        };
+
+        axios(config)
+            .then((res) => {
+                console.log(JSON.stringify(res.data));
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
     return (
         <div>
         {(Object.keys(props.current_campaign).length) > 0 ?
@@ -189,6 +234,9 @@ const StyledButton = styled.button`
                 <h4>Fund Raising Goal: {props.current_campaign.goal}</h4>
                 <h4>Category: {props.current_campaign.category}</h4>
             </Wrapper>
+                <PredictionContainer>
+                    <PredictionButton onClick={getPrediction}>Get Prediction</PredictionButton>
+                </PredictionContainer>
             <ButtonContainer>
                 <EditButton onClick={editHandler}>Edit</EditButton>
                 <DeleteButton onClick={deleteHandler}>Delete</DeleteButton>
