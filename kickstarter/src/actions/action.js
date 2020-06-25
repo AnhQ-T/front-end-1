@@ -134,4 +134,5 @@ export const Logout = () => dispatch => {
         type: LOGOUT
     })
     localStorage.clear()
+    window.location.reload()
 }
