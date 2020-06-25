@@ -51,7 +51,7 @@ export const Register = (credentials) => dispatch => {
         type: REGISTER
     })
     console.log(credentials)
-    axiosWithAuth().post("https://kickstarter-mock-api.herokuapp.com/auth/register" + `username=${credentials.username}` + `&` + `password=${credentials.password}`)
+    axiosWithAuth().post("https://kickstarter-mock-api.herokuapp.com/auth/register?" + `username=${credentials.username}` + `&` + `password=${credentials.password}`)
     .then(res => {
         console.log(res)
         dispatch({
