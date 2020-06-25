@@ -109,19 +109,17 @@ body {
 }
 
 #myHeader .links {
-    width:30%;
-    /* width:800px; */
+    /* width:30%; */
+    width:550px;
     display:flex;
     justify-content: space-evenly;
     align-items:center;
-    blackground-color: black;
     /* border: blue 3px solid; */
 }
 
 #myHeader .links a {
-    letter-spacing: 3px;
-    padding: 10px 0;
-    blackground-color: black;
+    /* letter-spacing: 3px; */
+    /* padding: 10px 0; */
     width: 100%;
     text-align:center;
     /* border: green 3px solid; */
@@ -137,6 +135,13 @@ body {
     height: 10vh;
     /* border: yellow 3px solid; */
     border-top: black 5px solid;
+}
+
+#myFooter .links {
+    width: 550px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 a {
@@ -235,13 +240,13 @@ a {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    /* border: black 5px solid; */
     height: 80vh;
 }
 
 .reviews-body h1 {
     height: 10vh;
-    font-size: 20px;
+    font-size: 40px;
+    text-align: center;
 }
 
 .reviews-list {
@@ -249,10 +254,8 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    /* align-items: space-evenly; */
     align-content: space-evenly;
     height: 60vh;
-    /* border: red 5px solid; */
 }
 
 .review {
@@ -276,12 +279,11 @@ a {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    /* border: green 5px solid; */
 }
 
 .review-txt h2 {
-    font-size: 15px;
-    /* border: blue 5px solid; */
+    font-size: 30px;
+    text-align: center;
 }
 
 .review-txt p {
@@ -294,66 +296,61 @@ a {
 
 @media(max-width: 800px) {
 
-    /* body { */
-    /* 	width: 100%; */
-    /* } */
-    
     #myHeader .header-nav{
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content:space-around;
-	align-items: center;
-	height: 10vh;
+    	width: 100%;
+    	display: flex;
+    	flex-direction: column;
+    	justify-content:space-around;
+    	align-items: center;
+    	height: 10vh;
     }
 
     #myHeader .header-img {
-	width: 100%;
-	height: 20vh;
-	background: url('../img/pattern.jpg');
-	border-top: black 5px solid;
-	border-bottom: black 5px solid;
+    	width: 100%;
+    	height: 20vh;
+    	background: url('../img/pattern.jpg');
+    	border-top: black 5px solid;
+    	border-bottom: black 5px solid;
     }
 
 
     #myHeader div {
-	width: 20%;
-	color: black;
+    	width: 20%;
+    	color: black;
     }
 
     #myHeader div h2 {
-	font-size: 20pt;
+    	font-size: 20pt;
+    	/* width: 40%; */
+    	text-align: center;
     }
 
     #myHeader .links {
-	width:30%;
-	/* width:800px; */
-	display:flex;
-	justify-content: space-evenly;
-	align-items:center;
-	blackground-color: black;
-	/* border: blue 3px solid; */
-    }
-
-    #myHeader .links a {
-	letter-spacing: 3px;
-	padding: 10px 0;
-	blackground-color: black;
-	width: 100%;
-	text-align:center;
-	/* border: green 3px solid; */
-	/* background-color: white; */
+    	/* width:30%; */
+    	width:550px;
+    	display:flex;
+    	flex-direction: row;
+    	justify-content: space-evenly;
+    	align-items:center;
+    	/* border: blue 3px solid; */
     }
 
     #myFooter {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content:space-around;
-	align-items: center;
-	height: 10vh;
-	/* border: yellow 3px solid; */
-	border-top: black 5px solid;
+    	width: 100%;
+    	display: flex;
+    	flex-direction: column;
+    	justify-content:space-around;
+    	align-items: center;
+    	height: 10vh;
+    	/* border: yellow 3px solid; */
+    	border-top: black 5px solid;
+    }
+
+    #myFooter .links {
+    	width: 550px;
+    	display: flex;
+    	justify-content: space-evenly;
+    	align-items: center;
     }
 
     a {
@@ -458,7 +455,9 @@ a {
 
     .reviews-body h1 {
 	height: 10vh;
-	font-size: 20px;
+	font-size: 40px;
+	width: 60%;
+	text-align: center;
     }
 
     .reviews-list {
@@ -468,12 +467,12 @@ a {
 	justify-content: space-evenly;
 	/* align-items: space-evenly; */
 	align-content: space-evenly;
-	height: 60vh;
+	height: 90vh;
 	/* border: red 5px solid; */
     }
 
     .review {
-	width: 40%;
+	width: 500px;
 	height: 25vh;
 	display: flex;
 	flex-direction: row;
@@ -522,7 +521,7 @@ a {
     #myHeader .header-nav{
 	width: 100%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content:space-around;
 	align-items: center;
 	height: 10vh;
@@ -544,27 +543,25 @@ a {
 
     #myHeader div h2 {
 	font-size: 20pt;
+	width: 100%;
     }
 
     #myHeader .links {
-	width:30%;
-	/* width:800px; */
-	display:flex;
+	/* width:100%; */
+	width: 550px;
+	display: flex;
+	flex-direction: row;
 	justify-content: space-evenly;
-	align-items:center;
-	blackground-color: black;
-	/* border: blue 3px solid; */
+	align-items: center;
+	height: 10vh;
     }
 
-    #myHeader .links a {
-	letter-spacing: 3px;
-	padding: 10px 0;
-	blackground-color: black;
-	width: 100%;
-	text-align:center;
-	/* border: green 3px solid; */
-	/* background-color: white; */
-    }
+    /* #myHeader .links a { */
+    /* 	letter-spacing: 3px; */
+    /* 	padding: 10px 0; */
+    /* 	width: 100%; */
+    /* 	text-align:center; */
+    /* } */
 
     #myFooter {
 	width: 100%;
@@ -573,10 +570,19 @@ a {
 	justify-content:space-around;
 	align-items: center;
 	height: 10vh;
-	/* border: yellow 3px solid; */
 	border-top: black 5px solid;
     }
 
+    #myFooter .links {
+	width: 550px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	border: green 5px solid;
+	height: 10vh;
+    }
+
+    
     a {
 	text-decoration: none;
     }
@@ -671,35 +677,35 @@ a {
     .reviews-body {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	align-items: center;
 	/* border: black 5px solid; */
-	height: 80vh;
+	height: 120vh;
     }
 
     .reviews-body h1 {
-	height: 10vh;
-	font-size: 20px;
+	font-size: 40px;
+	text-align: center;
     }
 
     .reviews-list {
 	display:flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
-	/* align-items: space-evenly; */
+	justify-content: space-between;
+	align-items: space-evenly;
 	align-content: space-evenly;
-	height: 60vh;
-	/* border: red 5px solid; */
+	height: 90vh;
     }
 
     .review {
-	width: 40%;
+	width: 460px;
 	height: 25vh;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: center;
+	align-content: space-around;
 	border: black 2px solid;
     }
 
