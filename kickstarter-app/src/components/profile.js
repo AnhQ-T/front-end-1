@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-
+import axios from 'axios';
+import CampaignList from './campaigns'
 const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -52,36 +53,49 @@ const HTwo = styled.h2`
 //     font-size: 100px;
 // `;
 export default function Profile (props) {
+    const [campaignData, setCampaignData] = useState([])
+    const [isFetching, setIsFetching] = useState(false)
+
+    useEffect(() => {
+        const config = {
+            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        };
+        axios.get(`https://kickstarter-mock-api.herokuapp.com/${localStorage.getItem("name")}`, config)
+        .then(res => {
+            console.log(res);
+            setCampaignData(res.data)
+        })
+    }, [])
+
+    console.log(campaignData)
     
-return (
-    <Container className="container"> 
-        {/* Going to flex direct row this */}
-
-        <TopButtons className="topButtons">
-            <Button>Add New Campaign</Button>
-            <Button>Logout</Button>
-        </TopButtons>
-
-        <div className="title">
-            <HOne>Welcome</HOne>
-        </div>
-    <BottomContainer className="bottomContainer">
-        <Campaigns className="campaigns">
-            <HTwo>Current Campaigns</HTwo>
-            <div>lorem</div>
-            <div>lorem</div>
-            <div>lorem</div>
-            <div>lorem</div>
-        </Campaigns>
-
-        <StatusAndPredictions className="statusAndPredictions">
-            <HTwo>Project Status and Predictions</HTwo>
-            <div>lorem</div>
-            <div>lorem</div>
-            <div>lorem</div>
-            <div>lorem</div>
-        </StatusAndPredictions>
-    </BottomContainer>
-    </Container>
-)
+    return (
+        <Container className="container">
+            {/* Going to flex direct row this */}
+            <TopButtons className="topButtons">
+                <Button>Add New Campaign</Button>
+                <Button>Logout</Button>
+            </TopButtons>
+            <div className="title">
+                <HOne>Welcome</HOne>
+            </div>
+        <BottomContainer className="bottomContainer">
+            <Campaigns className="campaigns">
+                <HTwo>Current Campaigns</HTwo>
+                <div>
+                    {campaignData.map((el, i) => (
+                        <CampaignList data={el} />
+                    ))}
+                </div>
+            </Campaigns>
+            <StatusAndPredictions className="statusAndPredictions">
+                <HTwo>Project Status and Predictions</HTwo>
+                <div>lorem</div>
+                <div>lorem</div>
+                <div>lorem</div>
+                <div>lorem</div>
+            </StatusAndPredictions>
+        </BottomContainer>
+        </Container>
+    )
 }
