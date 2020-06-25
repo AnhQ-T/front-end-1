@@ -506,28 +506,6 @@ a:hover {
 
 @media(max-width: 500px) {
 
-    body {
-	width: 100%;
-    }
-    
-    #myHeader .header-nav{
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content:space-around;
-	align-items: center;
-	height: 10vh;
-    }
-
-    #myHeader .header-img {
-	width: 100%;
-	height: 20vh;
-	background: url('../img/pattern.jpg');
-	border-top: black 5px solid;
-	border-bottom: black 5px solid;
-    }
-
-
     #myHeader div {
 	width: 20%;
 	color: black;
@@ -539,70 +517,32 @@ a:hover {
     }
 
     #myHeader .links {
-	/* width:100%; */
 	width: 550px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
 	height: 10vh;
     }
 
-    /* #myHeader .links a { */
-    /* 	letter-spacing: 3px; */
-    /* 	padding: 10px 0; */
-    /* 	width: 100%; */
-    /* 	text-align:center; */
-    /* } */
-
     #myFooter {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content:space-around;
-	align-items: center;
 	height: 10vh;
 	border-top: black 5px solid;
     }
 
     #myFooter .links {
 	width: 550px;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
 	height: 10vh;
-    }
-
-    
-    a {
-	text-decoration: none;
     }
 
     .index {
 	height: 260vh;
-	display: flex;
-	justify-content: center;
     }
 
     .index-within {
 	width: 500px;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	align-items: center;
-	align-content: space-around;
     }
 
     .join-container {
 	width: 450px;
 	height: 60vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
-	background: white;
-	border: black 5px solid;
     }
 
     .join-container img {
@@ -623,43 +563,7 @@ a:hover {
 	border: black 1px solid;
 	text-align: center;
 	border-radius: 10px;
-	transition: 1s;
     }
-
-    .join-container a:hover {
-	color: white;
-	background: gray;
-    }
-
-
-    .contact-container {
-	width: 100%;
-	height: 70vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
-	border: black 5px solid;
-    }
-
-    .contact-container label {
-	width: 50%;
-	height: 5vh;
-	padding: 40px 0 0 0;
-    }
-
-    .contact-container input {
-	width: 50%;
-	height: 5vh;
-    }
-
-    .contact-container button {
-	width: 50%;
-	height: 5vh;
-	padding: 10px 100px;
-    }
-
-
 
     /* Reviews page */
 
@@ -672,19 +576,14 @@ a:hover {
     }
 
     .reviews-body h1 {
-	height: 10vh;
+	height: 5vh;
 	font-size: 40px;
 	width: 80%;
 	text-align: center;
+	padding-top: 50px;
     }
 
     .reviews-list {
-	display:flex;
-	flex-direction: column;
-	/* flex-wrap: wrap; */
-	justify-content: space-evenly;
-	align-items: center;
-	/* align-content: space-evenly; */
 	height: 200vh;
     }
 
@@ -693,10 +592,6 @@ a:hover {
 	height: 50vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
-	align-content: space-evenly;
-	border: black 2px solid;
     }
 
     .review-img {
@@ -704,12 +599,7 @@ a:hover {
     }
 
     .review-txt {
-	width: 60%;
 	height: 20vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
     }
 
     .review-txt h2 {
